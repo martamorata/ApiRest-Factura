@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ver-factura-individual</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>ID: {{elemento.id}}</ion-item>
+    <ion-item>Cliente: {{elemento.cliente}}</ion-item>
+    <ion-item>Importe con IVA: {{elemento.importeTotalConIva}}%</ion-item>
+  </ion-list>
+  <ion-button routerLink="/home" routerDirection="back">Volver a home</ion-button>
+  
+</ion-content>

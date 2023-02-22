@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-button ion-button (click)="cancel()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>crear-cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+
+      <ion-label position="floating" color="primary">Nombre:</ion-label>
+
+      <ion-input type="text" formControlName="cliente"></ion-input>
+
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Crear cliente</ion-button>
+
+    </form>
+
+
+</ion-content>

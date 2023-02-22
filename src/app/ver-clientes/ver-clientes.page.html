@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ver-clientes</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+      <ion-icon name="add-circle-outline" (click)="openModal()" ></ion-icon>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+  <ion-searchbar (ionChange)="buscarCliente()" [(ngModel)]="clienteBuscado" animated="true" placeholder="Introduce nombre de cliente"></ion-searchbar>
+
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="clienteBuscado == ''">
+    <ion-item (click)="asignarCliente(c)" *ngFor="let c of listaClientes; let i=index"> {{c.id}} {{c.cliente}} </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="clienteBuscado != ''">
+    <ion-item (click)="asignarCliente(c)" *ngFor="let c of clientesBuscados; let i=index"> {{c.id}} {{c.cliente}} </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="changePage()">Siguiente pagina</ion-button>
+
+</ion-content>

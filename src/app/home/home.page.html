@@ -1,20 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Api Rest Facturas
+      <ion-icon name="add-circle-outline" (click)="nuevaFactura()"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item (click)="irAFactura(f)" *ngFor="let f of lista; let i=index">
+      {{f.id}} {{f.cliente}} {{f.importeTotalConIva | number:'1.2-2'}}%
+    </ion-item>
+  </ion-list>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  
 </ion-content>

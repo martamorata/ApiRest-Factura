@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-item>
+      <ion-select placeholder="Selecciona un producto" [(ngModel)]="productoSeleccionado">
+        <ion-select-option *ngFor="let p of productos; let i=index" [value]="p"> {{p.id}} {{p.descripcion}}
+          {{p.importeUnitario}}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-label position="floating">Introduce unidades: </ion-label>
+  <ion-input placeholder="Introduce unidades" type="number" [(ngModel)]="nUnidades" (ionChange)="importeTotalProducto()"></ion-input>
+
+  <p>Importe total: {{importeTotal}}</p>
+</ion-content>
